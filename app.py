@@ -21,3 +21,16 @@ sessions = Session(engine)
 
 app = Flask(_name_)
 
+#Convert the query results to a dictionary using date as the key and prcp as the value
+
+@app.route("/")
+def home()
+    return("/api/v1.0/precipitation")
+
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
