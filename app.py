@@ -24,8 +24,17 @@ app = Flask(_name_)
 #Convert the query results to a dictionary using date as the key and prcp as the value
 
 @app.route("/")
-def home()
-    return("/api/v1.0/precipitation")
+def home():
+    return("/api/v1.0/precipitation"
+    "/api/v1.0/stations<br/>"
+    "/api/v1.0/tobs<br/>"
+    "/api/v1.0/2017-01-01<br/>")
+    
+ @app.route("/api/v1.0/precipitation")
+  def precipitation():
+    Results = sessions.query(Station.name).all()
+    all_stations = list.(np.ravel(Results))
+    return jsonify(all_stations)
 
 
 
